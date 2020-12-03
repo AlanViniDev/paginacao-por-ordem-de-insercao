@@ -1,15 +1,3 @@
-<center>
-<?php
-/*Recebe a página atual via sessão*/
-session_start();
-require("paginas.php");
-if(!empty($_GET['pagina'])){
-    $_SESSION['pagina'] = $_GET['pagina'];
- }else{
-    $_SESSION['pagina'] = 1;
- }
-?>
-</center>
 <!-- Chama a biblioteca jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -87,6 +75,16 @@ jQuery(document).ready(function(){
     <tbody class = 'produtos'>
     </tbody>
 </table>
+<?php
+/*Recebe a página atual via sessão*/
+session_start();
+require("paginas.php");
+if(!empty($_GET['pagina'])){
+    $_SESSION['pagina'] = $_GET['pagina'];
+ }else{
+    $_SESSION['pagina'] = 1;
+ }
+?>
 <!-- Números da páginação -->
 <div class = "link" style = "text-align:center;position:relative;top:50px;"></div>
 </div>
